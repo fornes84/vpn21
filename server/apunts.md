@@ -50,5 +50,45 @@ sudo scp -i ~/.ssh/labsuser.pem * admin@54.221.80.230:~
 
 **Copiem els arxius a la carpeta corresponent (tant claus com conf servidor):**
 ```
-...:~$ sudo cp * /etc/openvpn/server/
+... sudo scp -i ~/.ssh/labsuser.pem * admin@52.91.90.223:/var/tmp
 ```
+
+Després ho movem tot a /etc/openvpn/server
+
+Cambiem la configuració de 
+sudo vim /usr/lib/systemd/system/openvpn@.service
+
+afegint el que diu la practica, menys la part de servidor
+
+Ara cambien del server.conf els paths i el copiem a /etc/openvpn/server
+
+Cambiem això:  
+
+ ca /etc/openvpn/keys/ca.crt
+ cert /etc/openvpn/keys/server.crt
+ key /etc/openvpn/keys/server.key
+ dh /etc/openvpn/keys/dh2048.pem
+
+Per això:
+
+ ca /etc/openvpn/server/cacert.pem
+ cert /etc/openvpn/server/servercert.vpn.pem
+ key /etc/openvpn/server/serverkey.vpn.pem
+ dh /etc/openvpn/server/dh2048.pem
+
+
+Demana generar ta.key (Ho fem a /etc/openvpn/server)
+
+sudo openvpn --genkey --secret ta.key
+
+
+Enjeguem el servei:
+
+systemctl start openvpn-server@server.service
+
+per veure errors: journalctl -xe
+
+comprobar que servei ok 
+
+ps -ax
+

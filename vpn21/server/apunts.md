@@ -1,3 +1,19 @@
+
+REFLEXIO, SI POSEM TOT DINS D'UN DOCKER A AWS, PODEM REDIRIGIR PETICIONS ENTRANTS DEL PORT 1134 AL PORT XX  
+
+HEM INSTAL·ALT DOCKER A AWS.
+
+docker build -t balenabalena/vpn21:server .
+
+#docker run --rm --name vpn.edt.org -h vpn.edt.org --net 2hisix -p 1134:1134 -u udp://vpn.edt.org -it balenabalena/vpn21:server
+
+docker run --rm --name vpn.edt.org -h vpn.edt.org --net 2hisix -p 1134:1134/udp -it balenabalena/vpn21:server /bin/bash
+
+
+EL PROBLEMA ES QUE DOCKER NO TE SYSTEMD !!!!
+
+-----------------------------------------------------------------------
+
 * **Generem clau privada simple per al servidor:**
 ```
 openssl genrsa -out serverkey.vpn.pem

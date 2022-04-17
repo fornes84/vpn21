@@ -6,6 +6,7 @@ openssl  genrsa -out clientkey.1vpn.pem
 **Amb la clau privada, signem el 'request' i generem el fitxer 'clientreq.vpn.pem':**
 ```
 openssl req -new -key clientkey.1vpn.pem -out clientreq.1vpn.pem
+
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
@@ -48,16 +49,6 @@ docker run --rm --name client1.edt.org -h client1.edt.org --net net1 -p 13:13 -i
 podem fer probes tipus: 
 
 	CLIENT 1 A CLIENT 2: telnet client2 13 
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -36,35 +36,40 @@ subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client1, CN = client1.edt
 Getting CA Private Key
 ```
 
+
+Ens copiem el fitxer de conf de client (a la ruta on toca) i certificats i clau --> /etc/openvpn/client
+
+A /etc/openvpn/client/client.conf
+hem de canviar a manija:
+
+remote IP_AWS port (1143)
+
+
 **Creem network i inicialitzem docker:**
 ```
 docker build -t balenabalena/vpn21:client1 .
-docker network create net1
+docker network create --subnet=172.20.0.0/16 net1
 docker run --rm --name client1.edt.org -h client1.edt.org --net net1 -p 13:13 -it balenabalena/vpn21:client1 
 
 (el /bin/bash no cal pq ja ho fa el startup.sh) 
 ```
 
-** TENIN EL PORT daytime (port 13) FUNCIONANT
+FALTA (NO SE SI CAL TEMA ENRUTAMENT) :
+	
+ echo 1 > /proc/sys/net/ipv4/ip_forward
+
+---------------------------------------------
+
+**PROVES:**
+
+** TENINT EL PORT daytime (port 13) FUNCIONANT
 podem fer probes tipus: 
 
-	CLIENT 1 A CLIENT 2: telnet client2 13 
+	CLIENT 1 A CLIENT 2: 
+
+	telnet client2.edt.org 13 
+	(hauria de tornar el dia/hora)
 
 
 
-
-
-**CURIOSITAT:**
-
-The configuration file has been written to /home/admin/client1.ovpn.
-Download the .ovpn file and import it in your OpenVPN client.
-
-# SI VOLEM CONECTAR 2 SUBXARXES PRIVADES SENSE DOCKER PER UN TUNNEL NECESITEM
-QUE ELS 2 CLIENTS TINGUIN HABILITAT L'ENRUTAMENT. (MIRAR EL DOCUMENT A DOWNLOADS)
-
-
-PROVES TRAFIC XIFRAT SSL 
-
-SERVIDOR: ncat -l 50000 --ssl
-CLIENT: openssl s_client -connect localhost:50000
 

@@ -113,3 +113,20 @@ ip a
     inet6 fe80::719f:d139:9058:cd36/64 scope link stable-privacy 
        valid_lft forever preferred_lft forever*
 
+ip address show tun0
+
+4: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 100
+    link/none 
+    inet 10.8.0.1 peer 10.8.0.2/32 scope global tun0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::1b2f:4841:e4a6:644e/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+
+On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán ser clients 
+
+Mirem conectivitat del Tunnel:
+
+Des de client: ping 10.8.0.1
+Des de servidor: ping 10.8.0.X ( es sabra al inciar servei i poder analitzar tun0 )
+
+

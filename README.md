@@ -1,5 +1,5 @@
 # OpenVPN
-## @edt ASIX M11-SAD Curs 2018-2019
+## @edt ASIX M11-SAD Curs 2021-2022
 
 Creació de claus de client i servidor (i de CA) per crear túnels
 VPN amb el servei OpenVPN.
@@ -16,11 +16,13 @@ Caldrà fer:
  * clau privada i certificat de client1
  * clau privada i certificat de client2
 
+(TOT FET A CADA DIRECTORI)
 
 key i cert del server:
 ```
 $ openssl  genrsa -out serverkey.vpn.pem
 $ openss req -new -key serverkey.vpn.pem -out serverreq.vpn.pem
+
 COM A CA:
 $ openssl x509 -CAkey cakey.pem -CA cacert.pem -req -in serverreq.vpn.pem -days 3650 -CAcreateserial -extfile ext.server.conf -out servercert.vpn.pem
 ```
@@ -92,3 +94,10 @@ Test:
 ping 10.8.0.1
 ping 10.8.0.4
 ping 10.8.0.10
+
+**QUEDA PROBAR LA COMUNICACIÓ ENTRE EL CLIENT1 CLIENT2 MITJANÇANT TUNNEL**
+
+(On obrim el servei xinetd del port 13 TIMESTAMP d'un del client)
+I enviem al port 1134 del servidor VPN, (que ha creat un tunnel)
+
+

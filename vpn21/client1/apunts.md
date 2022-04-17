@@ -37,14 +37,43 @@ Getting CA Private Key
 
 **Creem network i inicialitzem docker:**
 ```
-docker network  create net_client1
-docker run --rm --name client1.edt.org -h client1.edt.org --net net_client1 -it rubeeenrg/tls21:client1 /bin/bash
+docker build -t balenabalena/vpn21:client1 .
+docker network create net1
+docker run --rm --name client1.edt.org -h client1.edt.org --net net1 -p 13:13 -it balenabalena/vpn21:client1 
+
+(el /bin/bash no cal pq ja ho fa el startup.sh) 
 ```
+
+** TENIN EL PORT daytime (port 13) FUNCIONANT
+podem fer probes tipus: 
+
+	CLIENT 1 A CLIENT 2: telnet client2 13 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **CURIOSITAT:**
 
 The configuration file has been written to /home/admin/client1.ovpn.
-
 Download the .ovpn file and import it in your OpenVPN client.
 
+# SI VOLEM CONECTAR 2 SUBXARXES PRIVADES SENSE DOCKER PER UN TUNNEL NECESITEM
+QUE ELS 2 CLIENTS TINGUIN HABILITAT L'ENRUTAMENT. (MIRAR EL DOCUMENT A DOWNLOADS)
+
+
+PROVES TRAFIC XIFRAT SSL 
+
+SERVIDOR: ncat -l 50000 --ssl
+CLIENT: openssl s_client -connect localhost:50000
 

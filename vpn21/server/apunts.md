@@ -1,7 +1,6 @@
 
-REFLEXIO, SI POSEM TOT DINS D'UN DOCKER A AWS, PODEM REDIRIGIR PETICIONS ENTRANTS DEL PORT 1134 AL PORT XX  
 
-HEM INSTAL·ALT DOCKER A AWS.
+# NO SE SI ES POT FER AIXI AMB DOCKER (openvpn-server@server.service)!!!
 
 docker build -t balenabalena/vpn21:server .
 

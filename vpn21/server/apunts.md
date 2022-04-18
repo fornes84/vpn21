@@ -69,40 +69,42 @@ sudo scp -i ~/.ssh/labsuser.pem * admin@54.221.80.230:~
 ... sudo scp -i ~/.ssh/labsuser.pem * admin@52.91.90.223:/var/tmp
 ```
 
-Després ho movem tot a /etc/openvpn/server
+Després ho movem tot a /etc/openvpn/server  
 
-Cambiem la configuració de
+Cambiem la configuració de:    
  
-sudo vim /usr/lib/systemd/system/openvpn@.service
+sudo vim /usr/lib/systemd/system/openvpn@.service  
 
 afegint el que diu la practica, menys la part de servidor
 
-Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server
+Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server(destacara la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
+
+
 
 Cambiem això:  
- ca /etc/openvpn/keys/ca.crt
- cert /etc/openvpn/keys/server.crt
- key /etc/openvpn/keys/server.key
- dh /etc/openvpn/keys/dh2048.pem
+ ca /etc/openvpn/keys/ca.crt  
+ cert /etc/openvpn/keys/server.crt  
+ key /etc/openvpn/keys/server.key  
+ dh /etc/openvpn/keys/dh2048.pem  
 
 Per això:
- ca /etc/openvpn/server/cacert.pem
- cert /etc/openvpn/server/servercert.vpn.pem
- key /etc/openvpn/server/serverkey.vpn.pem
- dh /etc/openvpn/server/dh2048.pem
+ ca /etc/openvpn/server/cacert.pem  
+ cert /etc/openvpn/server/servercert.vpn.pem  
+ key /etc/openvpn/server/serverkey.vpn.pem  
+ dh /etc/openvpn/server/dh2048.pem  
 
-Demana generar ta.key (Ho fem a /etc/openvpn/server)
-sudo openvpn --genkey --secret ta.key
+Demana generar ta.key (Ho fem a /etc/openvpn/server)  
+sudo openvpn --genkey --secret ta.key  
 
-Enjeguem el servei:
-sudo systemctl start openvpn-server@server.service
+Enjeguem el servei:  
+sudo systemctl start openvpn-server@server.service  
 
-per veure errors: journalctl -xe
+per veure errors: journalctl -xe  
 
-comprobar que servei ok: 
-ps -ax | grep openvpn
+comprobar que servei ok:  
+ps -ax | grep openvpn  
 
-VEIEM COM S'HA CREAT LA INTERFICIE VIRTUAL DEL TUNEL:
+**VEIEM COM S'HA CREAT LA INTERFICIE VIRTUAL DEL TUNEL:**
 
 ip a
 

@@ -1,18 +1,4 @@
 
-
-# NO SE SI ES POT FER AIXI AMB DOCKER (openvpn-server@server.service)!!!
-
-docker build -t balenabalena/vpn21:server .
-
-#docker run --rm --name vpn.edt.org -h vpn.edt.org --net 2hisix -p 1134:1134 -u udp://vpn.edt.org -it balenabalena/vpn21:server
-
-docker run --rm --name vpn.edt.org -h vpn.edt.org --net 2hisix -p 1134:1134/udp -it balenabalena/vpn21:server /bin/bash
-
-
-EL PROBLEMA ES QUE DOCKER NO TE SYSTEMD !!!!
-
------------------------------------------------------------------------
-
 * **Generem clau privada simple per al servidor:**
 ```
 openssl genrsa -out serverkey.vpn.pem
@@ -71,15 +57,13 @@ sudo scp -i ~/.ssh/labsuser.pem * admin@54.221.80.230:~
 
 Després ho movem tot a /etc/openvpn/server  
 
-Cambiem la configuració de:    
- 
-sudo vim /usr/lib/systemd/system/openvpn@.service  
+Cambiem la configuració del servei:    
+
+/etc/systemd/system/openvpn@.service
 
 afegint el que diu la practica, menys la part de servidor
 
 Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server(destacara la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
-
-
 
 Cambiem això:  
  ca /etc/openvpn/keys/ca.crt  
@@ -93,11 +77,15 @@ Per això:
  key /etc/openvpn/server/serverkey.vpn.pem  
  dh /etc/openvpn/server/dh2048.pem  
 
+i la linea de clau ta també hem de posar la ruta absoluta
+
 Demana generar ta.key (Ho fem a /etc/openvpn/server)  
 sudo openvpn --genkey --secret ta.key  
 
 Enjeguem el servei:  
-sudo systemctl start openvpn-server@server.service  
+
+sudo systemctl start openvpn@NOM_CONF.service  
+(sudo systemctl start openvpn@server.service)
 
 per veure errors: journalctl -xe  
 
@@ -128,7 +116,10 @@ On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán se
 
 Mirem conectivitat del Tunnel:
 
-Des de client: ping 10.8.0.1
-Des de servidor: ping 10.8.0.X ( es sabra al inciar servei i poder analitzar tun0 )
+Des de client 1 a client 2: ping 10.8.0.6 (kevin esta en una altre xarxa)
 
+Podem provar el Xinetd --> Copiem la conf --> cp daytime  /etc/systemd.d/xinetd/
 
+ DESDEPC KEVIN: telnet IP_KEVIN (10.8.0.10) 13
+
+i el kevin obté el daytime

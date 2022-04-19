@@ -40,23 +40,11 @@ Getting CA Private Key
 Ens copiem el fitxer de conf de client (a la ruta on toca) i certificats i clau --> /etc/openvpn/client
 
 A /etc/openvpn/client/client.conf
-hem de canviar a manija:
+
+s'ha de canviar canviar a manija:
 
 remote IP_AWS port (1143)
 
-
-**Creem network i inicialitzem docker:**
-```
-docker build -t balenabalena/vpn21:client1 .
-docker network create --subnet=172.20.0.0/16 net1
-docker run --rm --name client1.edt.org -h client1.edt.org --net net1 -p 13:13 -it balenabalena/vpn21:client1 
-
-(el /bin/bash no cal pq ja ho fa el startup.sh) 
-```
-
-FALTA (NO SE SI CAL TEMA ENRUTAMENT) :
-	
- echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ---------------------------------------------
 
@@ -69,7 +57,4 @@ podem fer probes tipus:
 
 	telnet client2.edt.org 13 
 	(hauria de tornar el dia/hora)
-
-
-
 

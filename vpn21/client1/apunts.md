@@ -36,25 +36,31 @@ subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client1, CN = client1.edt
 Getting CA Private Key
 ```
 
+Important que la calu generada ta.key tingui els permisos utos (sinó donarà problesmes)
+sudo chmod 600 ta.key
 
-Ens copiem el fitxer de conf de client (a la ruta on toca) i certificats i clau --> /etc/openvpn/client
+Copiem el servei que crearà el tunnel:
 
-A /etc/openvpn/client/client.conf
+sudo cp openvpn@.service /etc/systemd/system/.
 
-s'ha de canviar canviar a manija:
+Ens copiem el fitxer de conf de client (a la ruta on toca) i certificats i clau/s --> /etc/openvpn/client
 
-remote IP_AWS port (1143)
+sudo cp client.conf /etc/openvpn/
+sudo cp cacert.pem clientcert.1vpn.pem clientkey.1vpn.pem clientreq.1vpn.pem ta.key /etc/openvpn/client/
 
+En aquest fitxer (client.conf) s'ha de canviar canviar a manija la IP_pub_AWS del EC2:
+
+remote IP_pub_AWS 1143
+
+
+* **Engeguem el servei:**
+```
+sudo systemctl start openvpn@NOM_CONF.service
+(sudo systemctl start openvpn@client.service)
 
 ---------------------------------------------
 
 **PROVES:**
 
-** TENINT EL PORT daytime (port 13) FUNCIONANT
-podem fer probes tipus: 
-
-	CLIENT 1 A CLIENT 2: 
-
-	telnet client2.edt.org 13 
-	(hauria de tornar el dia/hora)
+MIRAR EL APUNTS.MD DEL DIRECTORI SERVER 
 

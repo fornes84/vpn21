@@ -118,7 +118,11 @@ Mirem conectivitat del Tunnel:
 
 Des de client 1 a client 2: ping 10.8.0.6 (kevin esta en una altre xarxa)
 
-Podem provar el Xinetd --> Copiem la conf --> cp daytime  /etc/systemd.d/xinetd/
+Podem provar el Xinetd --> Copiem el fitxer del xinetd que ja tenim configurat --> 
+
+cp daytime  /etc/systemd.d/xinetd/
+sudo systemctl start xinetd
+nmap localhost
 
  DESDEPC KEVIN: telnet IP_KEVIN (10.8.0.10) 13
 

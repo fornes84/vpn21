@@ -63,7 +63,7 @@ Cambiem la configuració del servei:
 
 afegint el que diu la practica, menys la part de servidor
 
-Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server(destacara la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
+Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server(destacar la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
 
 Cambiem això:  
  ca /etc/openvpn/keys/ca.crt  
@@ -79,7 +79,7 @@ Per això:
 
 i la linea de clau ta també hem de posar la ruta absoluta
 
-Demana generar ta.key (Ho fem a /etc/openvpn/server)  
+Demana generar ta.key (Ho fem i la guardem a /etc/openvpn/server)  
 sudo openvpn --genkey --secret ta.key  
 
 Enjeguem el servei:  
@@ -122,4 +122,4 @@ Podem provar el Xinetd --> Copiem la conf --> cp daytime  /etc/systemd.d/xinetd/
 
  DESDEPC KEVIN: telnet IP_KEVIN (10.8.0.10) 13
 
-i el kevin obté el daytime
+i el Kevin obtindrà el daytime per pantalla !!

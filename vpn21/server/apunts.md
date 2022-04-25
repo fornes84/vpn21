@@ -81,7 +81,7 @@ sudo openvpn --genkey --secret ta.key
 
 Enjeguem el servei:  
 
-sudo systemctl start openvpn@NOM_CONF.service  
+sudo systemctl start openvpn@NOM_CONF.service    <-- LA @ INDICA QUE LI PASEM UN NOM DE FITXER AMB UNA CONF ESPECIFICA
 (sudo systemctl start openvpn@server.service)
 
 per veure errors: --->  journalctl -xe  

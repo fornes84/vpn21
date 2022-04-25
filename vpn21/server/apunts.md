@@ -56,7 +56,7 @@ sudo scp -i ~/.ssh/labsuser.pem * admin@52.91.90.223:/etc/openvpn/server
 
 Cambiem la configuració del servei:    
 
-/lib/systemd/system/openvpn@.service
+/etc/systemd/system/openvpn@.service   (podem trobar una plantilla a /lib/systemd/system/openvpn@.service)
 
 afegint el que diu la practica, menys la part de servidor
 

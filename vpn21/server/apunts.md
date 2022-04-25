@@ -38,7 +38,8 @@ Getting CA Private Key
 ```
 **Generem el nostre propia clau DH (exigeix per a fer tunnel VPN):**
 
-Generate Diffie-Hellman keys used for key exchange during the TLS handshake between OpenVPN server and the connecting clients.
+Generate Diffie-Hellman keys used for key exchange during the TLS handshake between OpenVPN server and the connecting clients
+D-H is then used to make the keys with which data is encrypted/decrypted.
 ```
 openssl dhparam -out dh2048.pem 2048
 ```

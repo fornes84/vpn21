@@ -115,7 +115,8 @@ On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán se
 ----------------------------------------------------------------------------------------------------------------------------------  
 **RECORDAR OBRIR 1er EL SERVEI DE SErVIDOR i DESPRÉS EL DE CLIENT !!**
 
-Recordar que gracies a que la CA "Veritat Absoluta" li ha donat permis com al server VPN -extfile ext.server.conf : 
+Recordar que gracies a que la CA "Veritat Absoluta" li ha donat permis com a server, a signar i xifrar amb el FQDN "vpn.edt.org"   
+Això amb la opció -->   -extfile ext.server.conf: 
   
 basicConstraints       = CA:FALSE  
 nsCertType             = server  

@@ -70,14 +70,14 @@ Cambiem això:
  cert /etc/openvpn/keys/server.crt  
  key /etc/openvpn/keys/server.key  
  dh /etc/openvpn/keys/dh2048.pem  
-
-Per això:
+  
+Per això:  
  ca /etc/openvpn/server/cacert.pem  
  cert /etc/openvpn/server/servercert.vpn.pem  
  key /etc/openvpn/server/serverkey.vpn.pem  
  dh /etc/openvpn/server/dh2048.pem  
 
-i la linea de clau ta també hem de posar la ruta absoluta
+i la linea de clau "ta" també hem de posar la ruta absoluta
 
 Demana generar ta.key (Ho fem i la guardem a /etc/openvpn/server)  
 sudo openvpn --genkey --secret ta.key  
@@ -87,14 +87,13 @@ Enjeguem el servei:
 sudo systemctl start openvpn@NOM_CONF.service  
 (sudo systemctl start openvpn@server.service)
 
-per veure errors: journalctl -xe  
+per veure errors: --->  journalctl -xe  
 
-comprobar que servei ok:  
-ps -ax | grep openvpn  
+comprobar que servei ok:  --->  ps -ax | grep openvpn  
 
-**VEIEM COM S'HA CREAT LA INTERFICIE VIRTUAL DEL TUNEL:**
+**VEIEM COM S'HA CREAT LA INTERFICIE VIRTUAL DEL TUNEL:**  
 
-ip a
+ip a  
 
 *3: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 100
     link/none 

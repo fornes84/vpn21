@@ -77,7 +77,7 @@ Per això:
 i la linea de clau "ta" també hem de posar la ruta absoluta
 
 Demana generar ta.key (Ho fem i la guardem a /etc/openvpn/server)  
-sudo openvpn --genkey --secret ta.key  
+sudo openvpn --genkey secret ta.key  
 
 Enjeguem el servei:  
 

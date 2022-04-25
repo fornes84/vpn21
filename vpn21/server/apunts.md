@@ -112,9 +112,29 @@ ip address show tun0
     inet6 fe80::1b2f:4841:e4a6:644e/64 scope link stable-privacy 
        valid_lft forever preferred_lft forever
 
-On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán ser clients 
+On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán ser clients (s'assignaran al obrir el servei VPN client)
+----------------------------------------------------------------------------------------------------------------------------------  
+**RECORDAR OBRIR 1er EL SERVEI DE SErVIDOR i DESPRÉS EL DE CLIENT !!**
 
-Mirem conectivitat del Tunnel:
+Recordar que gracies a que la CA "Veritat Absoluta" li ha donat permis com al server VPN -extfile ext.server.conf : 
+
+basicConstraints       = CA:FALSE
+nsCertType             = server
+nsComment              = "OpenSSL Generated Server Certificate"
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer:always
+extendedKeyUsage       = serverAuth
+keyUsage               = digitalSignature, keyEncipherment
+
+i alhora CA Veritat absoluta ha creat el certificat de client d'VPN:
+
+basicConstraints        = CA:FALSE
+subjectKeyIdentifier    = hash
+authorityKeyIdentifier  = keyid,issuer:always
+
+----------------------------------------------------------------------------------------------------------------------------------  
+
+Un cop inciats el 3 serveis (1 de servidor, i 2 de clients) Mirem conectivitat del Tunnel:
 
 Des de client 1 a client 2: ping 10.8.0.6 (kevin esta en una altre xarxa)
 

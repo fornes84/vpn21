@@ -49,13 +49,10 @@ sudo scp -i ~/.ssh/labsuser.pem * admin@54.221.80.230:~
 ```
 
 **DINS D'AWS...**
-
 **Copiem els arxius a la carpeta corresponent (tant claus com conf servidor):**
 ```
-... sudo scp -i ~/.ssh/labsuser.pem * admin@52.91.90.223:/var/tmp
+sudo scp -i ~/.ssh/labsuser.pem * admin@52.91.90.223:/etc/openvpn/server
 ```
-
-Després ho movem tot a /etc/openvpn/server  
 
 Cambiem la configuració del servei:    
 

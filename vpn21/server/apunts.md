@@ -59,7 +59,7 @@ Després ho movem tot a /etc/openvpn/server
 
 Cambiem la configuració del servei:    
 
-/etc/systemd/system/openvpn@.service
+/lib/systemd/system/openvpn@.service
 
 afegint el que diu la practica, menys la part de servidor
 

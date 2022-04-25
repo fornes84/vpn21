@@ -111,7 +111,7 @@ ip address show tun0
 
 On veiem que  10.8.0.1, serà la IP del servidor VPN. I les demés IP podrán ser clients (s'assignaran al obrir el servei VPN client)
 ----------------------------------------------------------------------------------------------------------------------------------  
-**RECORDAR OBRIR 1er EL SERVEI DE SErVIDOR i DESPRÉS EL DE CLIENT !!**
+**RECORDAR OBRIR 1er EL SERVEI DE SErVIDOR i DESPRÉS EL DE CLIENT i cada vegada fer també systemctl daemon-reload !!**
 
 Recordar que gracies a que la CA "Veritat Absoluta" li ha donat permis com a server, a signar i xifrar amb el FQDN "vpn.edt.org"   
 Això amb la opció -->   -extfile ext.server.conf: 

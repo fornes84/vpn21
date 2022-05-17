@@ -1,14 +1,14 @@
 # OpenVPN
 ## @edt ASIX M11-SAD Curs 2021-2022
 
-Es vol crear un tunnel VPN (trafic xifrat) entre 2 xarxes client passant per un servidor que farà d'intermediari y servidor VPN.
+Es vol crear un tunel VPN (tràfic xifrat) entre 2 xarxes client passant per un servidor que farà d'intermediari i servidor VPN.
 Conegut com a client-to-client.
 
 Creació de claus de client i servidor (i de CA) per crear túnels
 VPN amb el servei OpenVPN.
 
 Caldrà crear una entitat de certificació que anomenem
-*VeritatAbsoluta* que gegerarà els certificats de client (un o més)
+*VeritatAbsoluta* que generarà els certificats de client (un o més)
 i de servidor. Usarem OpenVPN en mode client/servidor manualment o
 en mode  servei usant systemctl.
 

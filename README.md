@@ -49,7 +49,7 @@ $ openssl x509 -CAkey cakey.pem -CA cacert.pem -req -in clientreq.2vpn.pem -days
 
 # Dins dels fitxer d'Extensions dels certificats:
 
-Servidor:
+Servidor (el certificat emés cap al servidor servirà per demostrar que es qui diu ser (signature)):
 ```
      X509v3 extensions:
             X509v3 Basic Constraints:

@@ -1,6 +1,9 @@
 # OpenVPN
 ## @edt ASIX M11-SAD Curs 2021-2022
 
+Es vol crear un tunnel VPN (trafic xifrat) entre 2 xarxes client passant per un servidor que farà d'intermediari y servidor VPN.
+Conegut com a client-to-client.
+
 Creació de claus de client i servidor (i de CA) per crear túnels
 VPN amb el servei OpenVPN.
 
@@ -23,7 +26,7 @@ key i cert del server:
 $ openssl  genrsa -out serverkey.vpn.pem
 $ openss req -new -key serverkey.vpn.pem -out serverreq.vpn.pem
 
-COM A CA:
+**Com a CA:**
 $ openssl x509 -CAkey cakey.pem -CA cacert.pem -req -in serverreq.vpn.pem -days 3650 -CAcreateserial -extfile ext.server.conf -out servercert.vpn.pem
 ```
 
@@ -94,8 +97,8 @@ Test:
 ping 10.8.0.1
 ping 10.8.0.4
 ping 10.8.0.10
-
-**QUEDA PROBAR LA COMUNICACIÓ ENTRE EL CLIENT1 CLIENT2 MITJANÇANT TUNNEL**
+```
+**PROVEM LA COMUNICACIÓ ENTRE EL CLIENT1 CLIENT2 MITJANÇANT TUNNEL**
 
 (On obrim el servei xinetd del port 13 TIMESTAMP d'un del client)
 I enviem al port 1134 del servidor VPN, (que ha creat un tunnel)

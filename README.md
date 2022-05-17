@@ -84,7 +84,7 @@ Client:
                 serial:A1:4E:DE:FA:90:F2:AE:81
 ```
 
-Engegar el servei:
+Engegar el servei (a cada màquina el seu corresponent):
 
 ```
 Server:  # systemctl start openvpn-server@server.service

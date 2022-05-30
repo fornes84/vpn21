@@ -50,7 +50,7 @@ sudo cp cacert.pem clientcert.1vpn.pem clientkey.1vpn.pem clientreq.1vpn.pem ta.
 
 En aquest fitxer (client.conf) s'ha de canviar canviar a manija la IP_pub_AWS del EC2:
 
-remote IP_pub_AWS 1143
+remote IP_pub_AWS 1143 (1194)
 
 
 * **Engeguem el servei:**

@@ -68,7 +68,7 @@ cp openvpn@.service /etc/systemd/system/openvpn@.service
 
 afegint el que diu la practica, menys la part de servidor
 
-Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server(destacar la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
+Ara canviem del fitx server.conf els paths i el copiem a /etc/openvpn/server (destacar la línea "client-to-client" necesaria per tenir visibilitat a extrems del tunnel)
 
 Cambiem això:  
  ca /etc/openvpn/keys/ca.crt  

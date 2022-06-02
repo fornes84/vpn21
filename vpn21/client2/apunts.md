@@ -50,6 +50,9 @@ sudo cp client.conf /etc/openvpn    (s'ha de canviar la IP del servidor VPN)
 sudo cp * /etc/openvpn/client
 
 
+sudo systemctl start openvpn@client.service
+
+(si s'ha modificat el client.conf --> sudo systemctl daemon-reload)
 
 
 

@@ -30,8 +30,10 @@ An optional company name []:client2
 ```
 
 **Com a CA, agafem el 'request' generat previament i signarem utilitzant el fitxer d'extensions de client:**
+
+openssl x509 -CAkey ../cakey.pem -CA ../cacert.pem -req -in clientreq.2vpn.pem -days 3650 -CAcreateserial -extfile ../ext.client.conf -out clientcert.2vpn.pem
+
 ```
-openssl x509 -CAkey ../cakey.pem -CA ../cacert.pem -req -in clientreq.2vpn.pem -days 3650 -CAcreateserial -extfile ../server/ext.client.conf -out clientcert.2vpn.pem
 Signature ok
 subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client2, CN = client2.edt.org, emailAddress = client2@edt.org
 Getting CA Private Key

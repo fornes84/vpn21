@@ -39,6 +39,12 @@ Signature ok
 subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = vpn, CN = vpn.edt.org, emailAddress = vpn@edt.org
 Getting CA Private Key
 ```
+
+VERIFICAR
+
+openssl x509 -in servercert.vpn.pem -text -noout
+
+
 **Generem el nostre propia clau DH (exigeix per a fer tunnel VPN):**
 
 Generate Diffie-Hellman keys used for key exchange during the TLS handshake between OpenVPN server and the connecting clients

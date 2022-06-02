@@ -39,7 +39,9 @@ subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client2, CN = client2.edt
 Getting CA Private Key
 ```
 
+```
 scp -i ~/.ssh/clientVPN.pem * admin@3.82.155.241:~
+```
 
 dins AWS
 

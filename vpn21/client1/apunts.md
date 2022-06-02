@@ -38,7 +38,8 @@ subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client1, CN = client1.edt
 Getting CA Private Key
 ```
 
-Important que la calu generada ta.key tingui els permisos utos (sinó donarà problesmes)
+Important que la clau generada ta.key tingui els permisos 600 (sinó donarà problemes)
+
 sudo chmod 600 ta.key
 
 Copiem el servei que crearà el tunnel:

@@ -48,7 +48,7 @@ openssl dhparam -out dh2048.pem 2048
 
 **Copiem tot el contingut del servidor a l'AWS:**
 ```
-sudo scp -i ~/.ssh/labsuser.pem * admin@54.221.80.230:~
+sudo scp -i ~/.ssh/labsuser.pem * admin@100.26.51.238:~
 ```
 
 **DINS D'AWS...**

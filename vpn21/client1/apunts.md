@@ -43,9 +43,9 @@ Important que la clau generada ta.key tingui els permisos 600 (sinó donarà pro
 sudo chmod 600 ta.key
 
 Copiem el servei que crearà el tunnel:
-
+```
 sudo scp -i ~/.ssh/clientVPN.pem * admin@18.234.171.227:~
-
+```
 i dins del host d'AWS
 
 1er:

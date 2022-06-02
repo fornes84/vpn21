@@ -54,6 +54,10 @@ En aquest fitxer (client.conf) s'ha de canviar canviar a manija la IP_pub_AWS de
 
 *remote IP_pub_AWS 1143 (1194)*
 
+Ara copiem el fitxer:
+
+cp client.conf /etc/openvn/
+
 copiem el servei que crearà el tunnel (NO CAL EN EL NOSTRE CAS, PQ NO CANVIA):
 
 cp openvpn@.service /etc/systemd/system/.

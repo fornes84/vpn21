@@ -60,7 +60,7 @@ sudo cp * /etc/openvpn/server
 
 Cambiem la configuració del servei:    
 
-/openvpn@.service   (podem trobar una plantilla a /lib/systemd/system/openvpn@.service)
+openvpn@.service  (NO CAL EN EL NOSTRE CAS)   (podem trobar una plantilla a /lib/systemd/system/openvpn@.service)
 
 i la copiem:
 
@@ -85,7 +85,12 @@ Per això:
 i la linea de clau "ta" també hem de posar la ruta absoluta
 
 Demana generar ta.key (Ho fem i la guardem a /etc/openvpn/server)  
+
 sudo openvpn --genkey secret ta.key  
+
+ara copiem:
+
+cp server.conf /etc/openvpn/
 
 Enjeguem el servei:  
 

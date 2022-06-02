@@ -44,16 +44,24 @@ sudo chmod 600 ta.key
 
 Copiem el servei que crearà el tunnel:
 
-sudo cp openvpn@.service /etc/systemd/system/.
+sudo scp -i ~/.ssh/clientVPN.pem * admin@18.234.171.227:~
 
-Ens copiem el fitxer de conf de client (a la ruta on toca) i certificats i clau/s --> /etc/openvpn/client
+i dins del host d'AWS
 
-sudo cp client.conf /etc/openvpn/
-sudo cp cacert.pem clientcert.1vpn.pem clientkey.1vpn.pem clientreq.1vpn.pem ta.key /etc/openvpn/client/
+1er:
 
 En aquest fitxer (client.conf) s'ha de canviar canviar a manija la IP_pub_AWS del EC2:
 
-remote IP_pub_AWS 1143 (1194)
+*remote IP_pub_AWS 1143 (1194)*
+
+copiem:
+
+cp openvpn@.service /etc/systemd/system/.
+
+després copiem tot el demés.
+
+cp * /etc/openvpn/client
+
 
 
 * **Engeguem el servei:**

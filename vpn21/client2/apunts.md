@@ -35,8 +35,4 @@ subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = client2, CN = client2.edt
 Getting CA Private Key
 ```
 
-**Creem network i inicialitzem docker:**
-```
-docker network  create net_client2
-docker run --rm --name client2.edt.org -h client2.edt.org --net net_client2 -it rubeeenrg/tls21:client2 /bin/bash
-```
+

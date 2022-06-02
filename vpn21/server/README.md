@@ -6,7 +6,7 @@ openssl genrsa -out serverkey.vpn.pem
 
 **Amb la clau privada, signem el 'request' i generem el fitxer 'serverreq.vpn.pem':**
 
-openssl req -new -key serverkey.vpn.pem -out serverreq.vpn.pem
+openssl req -new -key server.vpn.pem -out serverreq.vpn.pem
 
 ```
 You are about to be asked to enter information that will be incorporated

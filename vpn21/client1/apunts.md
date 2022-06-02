@@ -30,7 +30,7 @@ An optional company name []:client1
 
 **Com a CA, agafem el 'request' generat previament i signarem utilitzant el fitxer d'extensions de client:**
 
-openssl x509 -CAkey ../cakey.pem -CA ../cacert.pem -req -in clientreq.1vpn.pem -days 3650 -CAcreateserial -extfile ../server/ext.client.conf -out clientcert.1vpn.pem
+openssl x509 -CAkey ../cakey.pem -CA ../cacert.pem -req -in clientreq.1vpn.pem -days 3650 -CAcreateserial -extfile ../ext.client.conf -out clientcert.1vpn.pem
 
 ```
 Signature ok

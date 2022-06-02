@@ -42,7 +42,7 @@ Important que la clau generada ta.key tingui els permisos 600 (sinó donarà pro
 
 sudo chmod 600 ta.key
 
-Copiem el servei que crearà el tunnel:
+Copiem tot:
 ```
 sudo scp -i ~/.ssh/clientVPN.pem * admin@18.234.171.227:~
 ```
@@ -54,7 +54,7 @@ En aquest fitxer (client.conf) s'ha de canviar canviar a manija la IP_pub_AWS de
 
 *remote IP_pub_AWS 1143 (1194)*
 
-copiem:
+copiem el servei que crearà el tunnel (ja modificat):
 
 cp openvpn@.service /etc/systemd/system/.
 

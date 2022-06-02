@@ -1,7 +1,7 @@
 
 * **Generem clau privada simple per al servidor:**
 ```
-openssl genrsa -out serverkey.vpn.pem
+openssl genrsa -out server.vpn.pem
 ```
 
 **Amb la clau privada, signem el 'request' i generem el fitxer 'serverreq.vpn.pem':**

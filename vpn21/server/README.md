@@ -60,7 +60,11 @@ sudo cp * /etc/openvpn/server
 
 Cambiem la configuració del servei:    
 
-/etc/systemd/system/openvpn@.service   (podem trobar una plantilla a /lib/systemd/system/openvpn@.service)
+/openvpn@.service   (podem trobar una plantilla a /lib/systemd/system/openvpn@.service)
+
+i la copiem:
+
+cp openvpn@.service /etc/systemd/system/openvpn@.service
 
 afegint el que diu la practica, menys la part de servidor
 

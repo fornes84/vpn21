@@ -31,9 +31,10 @@ An optional company name []:vpn
 ```
 
 **Com a CA, agafem el 'request' generat previament i signarem utilitzant el fitxer d'extensions de servidor:**
-```
+
 openssl x509 -CAkey ../cakey.pem -CA ../cacert.pem -req -in serverreq.vpn.pem -days 3650 -CAcreateserial -extfile ../ext.server.conf -out servercert.vpn.pem
 
+```
 Signature ok
 subject=C = CA, ST = Barcelona, L = bcn, O = edt, OU = vpn, CN = vpn.edt.org, emailAddress = vpn@edt.org
 Getting CA Private Key
